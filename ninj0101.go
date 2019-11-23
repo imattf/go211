@@ -1,3 +1,4 @@
+// Ninja Exercise 01-01
 package main
 
 import (
