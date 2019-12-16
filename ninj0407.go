@@ -18,9 +18,9 @@ func main() {
 	fmt.Println(xy)
 
 	for k, v := range xy {
-		fmt.Println(k, v)
+		fmt.Println("Record: ", k)
 		for k1, v1 := range v {
-			fmt.Println(k1, v1)
+			fmt.Printf(" index %v is value: %v \n", k1, v1)
 		}
 	}
 }
