@@ -12,7 +12,7 @@ func main() {
 		"no_dr":           []string{"Being Evil", "Ice Cream", "Sunsets"},
 	}
 
-	m["jaws_jaws"] = []string{"Being no so Evil", "Ice Cream", "Sunsets"}
+	m["jaws_jaws"] = []string{"Being not so Evil", "Ice Cream", "Sunsets"}
 
 	for k, v := range m {
 		fmt.Printf("%v favorite things are:\n", k)
@@ -22,7 +22,13 @@ func main() {
 	}
 
 	fmt.Println("Hello, deletion...")
-	delete(m, "jaws_jaws")
+
+	if v, ok := m["jaws_jaws"]; ok {
+		fmt.Println("found", v)
+		delete(m, "jaws_jaws")
+	} else {
+		fmt.Println("not found")
+	}
 
 	for k, v := range m {
 		fmt.Printf("%v favorite things are:\n", k)
