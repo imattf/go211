@@ -65,3 +65,5 @@ func main() {
 	info(square1)
 
 }
+
+// to make this work: https://tour.golang.org/methods/15
