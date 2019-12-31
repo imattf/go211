@@ -70,9 +70,8 @@ func main() {
 	users := []user{u1, u2, u3}
 
 	// your code goes here
-
-	for i, v := range users {
-		fmt.Printf("Users unsorted %v... \n", i)
+	fmt.Printf("Users unsorted... \n")
+	for _, v := range users {
 		fmt.Println("\t First:", v.First, ", Last:", v.Last, ", Age:", v.Age, ", Sayings:")
 		for _, sayings := range v.Sayings {
 			fmt.Println("\t\t", sayings)
@@ -81,8 +80,8 @@ func main() {
 
 	sort.Sort(ByAge(users))
 
-	for i, v := range users {
-		fmt.Printf("Users sorted by age %v... \n", i)
+	fmt.Printf("Users sorted by age... \n")
+	for _, v := range users {
 		fmt.Println("\t First:", v.First, ", Last:", v.Last, ", Age:", v.Age, ", Sayings:")
 		sort.Strings(v.Sayings)
 		for _, sayings := range v.Sayings {
@@ -92,8 +91,8 @@ func main() {
 
 	sort.Sort(ByLast(users))
 
-	for i, v := range users {
-		fmt.Printf("Users sorted by Last %v... \n", i)
+	fmt.Printf("Users sorted by Last... \n")
+	for _, v := range users {
 		fmt.Println("\t First:", v.First, ", Last:", v.Last, ", Age:", v.Age, ", Sayings:")
 		//sort.Strings(v.Sayings) (redundant here cuz of line87)
 		for _, sayings := range v.Sayings {
