@@ -20,17 +20,17 @@ type user struct {
 	Sayings []string
 }
 
-type ByAge []user
+type byAge []user
 
-func (a ByAge) Len() int           { return len(a) }
-func (a ByAge) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
-func (a ByAge) Less(i, j int) bool { return a[i].Age < a[j].Age }
+func (a byAge) Len() int           { return len(a) }
+func (a byAge) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a byAge) Less(i, j int) bool { return a[i].Age < a[j].Age }
 
-type ByLast []user
+type byLast []user
 
-func (a ByLast) Len() int           { return len(a) }
-func (a ByLast) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
-func (a ByLast) Less(i, j int) bool { return a[i].Last < a[j].Last }
+func (a byLast) Len() int           { return len(a) }
+func (a byLast) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a byLast) Less(i, j int) bool { return a[i].Last < a[j].Last }
 
 func main() {
 	u1 := user{
@@ -77,7 +77,7 @@ func main() {
 		}
 	}
 
-	sort.Sort(ByAge(users))
+	sort.Sort(byAge(users))
 
 	fmt.Printf("Users sorted by age... \n")
 	for _, v := range users {
@@ -88,7 +88,7 @@ func main() {
 		}
 	}
 
-	sort.Sort(ByLast(users))
+	sort.Sort(byLast(users))
 
 	fmt.Printf("Users sorted by Last... \n")
 	for _, v := range users {
