@@ -23,16 +23,11 @@ import (
 )
 
 var wg sync.WaitGroup
-
-//var increment int  // why can't this be definded inside func main? It can
+var increment int
 
 func main() {
 	fmt.Println("in main...")
 	fmt.Println("...CPUs:", runtime.NumCPU())
-
-	//var increment int
-	// increment appears to be out of scope of func foo,
-	// but in scope if foo is converted into an inline anonymous function inside main
 	fmt.Println("...and count is:", increment)
 
 	wg.Add(100)
