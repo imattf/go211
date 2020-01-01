@@ -1,3 +1,4 @@
+// Hands-on Exercise #3; Ninja Level 9
 // Using goroutines, create an incrementer program
 // have a variable to hold the incrementer value
 // launch a bunch of goroutines
@@ -11,7 +12,6 @@
 // the above will create a race condition.
 // Prove that it is a race condition by using the -race flag
 // if you need help, here is a hint: https://play.golang.org/p/FYGoflKQej
-
 // code: https://github.com/GoesToEleven/go-programming
 
 package main
@@ -23,12 +23,16 @@ import (
 )
 
 var wg sync.WaitGroup
-var increment int
+
+//var increment int  // why can't this be definded inside func main? It can
 
 func main() {
 	fmt.Println("in main...")
 	fmt.Println("...CPUs:", runtime.NumCPU())
 
+	//var increment int
+	// increment appears to be out of scope of func foo,
+	// but in scope if foo is converted into an inline anonymous function inside main
 	fmt.Println("...and count is:", increment)
 
 	wg.Add(100)
