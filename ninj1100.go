@@ -13,6 +13,8 @@ func main() {
 		//log.Println("err02 happened", err)
 		//log.Fatalln("err03 happened", err)
 		//log.Panic("err04 happened ",err)
+		//log.Panicln("err05 happened ", err)
+		panic(err)
 	}
 }
 
