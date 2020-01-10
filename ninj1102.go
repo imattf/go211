@@ -40,8 +40,8 @@ func main() {
 func toJSON(a interface{}) ([]byte, error) {
 	bs, err := json.Marshal(a)
 	if err != nil {
-		//return bs, fmt.Errorf("norgate math again: square root of negative number: %v", err)
-		return bs, errors.New(fmt.Sprintf("norgate math again: square root of negative number", err))
+		//return bs, fmt.Errorf("toJSON error: %v", err)
+		return bs, errors.New(fmt.Sprintf("toJSON error %v", err))
 	}
 	return bs, nil
 }
